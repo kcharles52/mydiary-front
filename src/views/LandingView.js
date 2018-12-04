@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import FormBox from "../components/user/formBox";
 const IndexPage = (props) => {
+  let {login, signup} = props
   return (
     <Fragment>
       <div id="home" className="pg-content">
@@ -20,11 +21,11 @@ const IndexPage = (props) => {
             <div className="home-col">
               <div className="form">
                 <div className="tab-group">
-                  <div className="tab active">
-                    <a href="#login">Log In</a>
+                  <div className="tab">
+                    <a href="#login" onClick={login }>Log In</a>
                   </div>
                   <div className="tab">
-                    <a href="#signup">Register</a>
+                    <a href="#signup" onClick={signup}>Register</a>
                   </div>
                 </div>
 

@@ -1,35 +1,28 @@
 import React, { Component, Fragment } from "react";
 import LoginForm from "./loginForm";
+import SingupForm from "./signupForm";
 
 //forms
 class FormBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayTab: true
+      displayTab: "false"
     };
-
   }
 
-
-  // toggling() {
-  //   this.setState(prevState => ({
-  //     displayTab: !prevState.toggle
-  //   }));
-  // }
-
+  tab = choice => {
+    let display;
+    choice==="Signup"? display= <SingupForm {...this.props} />: display =<LoginForm {...this.props}/>;
+    return display
+  };
   render() {
     return (
       <Fragment>
-        <div id="login"  style={{}}>
-          <LoginForm {...this.props} />
+        <div>
+          {this.tab(this.props.display)}
         </div>
-        <div
-          id="signup"
-          display={this.state.display}
-        >
-          <p>Register</p>
-        </div>
+        <div />
       </Fragment>
     );
   }

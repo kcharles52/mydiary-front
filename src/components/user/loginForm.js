@@ -19,8 +19,7 @@ export class Login extends Component {
     render() {
         return (
             <Fragment>
-                <LoginFormView login={this.handleLogin}/>
-                
+                <LoginFormView login={this.handleLogin}/>             
             </Fragment>
         );
     }

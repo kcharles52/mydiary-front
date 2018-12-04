@@ -47,13 +47,13 @@ describe("login reducer", () => {
     });
   });
 });
-const mockSetup = (mock, store) => {
+export const mockSetup = (mock, store) => {
   mock = new MockAdapter(axios);
   const mockStore = configureMockStore();
   store = mockStore({});
   return { mock, store };
 };
-const axiosMock = (status, action) => {
+export const axiosMock = (status, action) => {
   mock.onPost(LOGIN_URL).reply(status, {});
   action({})(store.dispatch);
   expect(store.getActions()).toEqual([]);

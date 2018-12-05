@@ -30,8 +30,7 @@
     transform: rotate(360deg);
   }
 }
-*General settings*/
-body {
+*General settings*/ body {
   background: #fff;
   font-family: "Open Sans", sans-serif;
   color: #4e4e4e;
@@ -188,7 +187,7 @@ section {
   background-image: url("./img/homepagebg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height:890px;
+  height: 890px;
 }
 
 .home-col {
@@ -489,7 +488,9 @@ th {
 }
 
 .dEntry {
-  max-width: 80%;
+  max-width: 70%;
+  background-color: rgb(20, 20, 30, 0.9);
+  padding: 5%;
   margin: auto;
 }
 
@@ -499,4 +500,53 @@ th {
   background-color: rgb(20, 20, 30, 0.9);
   padding: 40px;
   color: gray;
+}
+.invalid-feedback {
+  color: #db3615;
+}
+.ql-editor {
+  background-color: #ffffff;
+  height: 300px;
+}
+
+.footer {
+  color: #fff;
+  background-color: #6c757d !important;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.navbar-brand {
+  font-size: 35px;
+  padding-left: 5%;
+}
+.nav-item {
+  font-size: 20px;
+  list-style-type: none;
+  display: inline;
+  padding: 0 15px;
+}
+.navbar-nav {
+  float: right;
+  padding-right: 5%;
+  margin-top: -25px;
+}
+.notfound {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body {
+  background-image: url("./img/homepagebg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 890px;
 }

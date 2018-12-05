@@ -24,7 +24,7 @@ export class NewEntry extends Component {
   componentWillReceiveProps(nextProps) {
     console.log(nextProps)
     if (nextProps.response.Message) {
-      this.props.history.push(`/entries`);
+      this.props.history.push(`/home`);
     }
   }
   getInput = value => {

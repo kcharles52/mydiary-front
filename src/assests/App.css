@@ -486,12 +486,26 @@ th {
   border: 2px solid;
   margin-right: 3px;
 }
-
-.dEntry {
-  max-width: 70%;
-  background-color: rgb(20, 20, 30, 0.9);
-  padding: 5%;
+.entryCards{
   margin: auto;
+  width: 90%;
+  /* padding: 0 30px; */
+}
+.dEntry {
+  max-width: 33%;
+  width: 30%;
+  height: 300px;
+  background-color: rgb(20, 20, 30, 0.9);
+  padding: 3%;
+  margin: 10px;
+  position: relative;
+  float: left;
+  color: #ddd;
+
+}
+
+.entries{
+  background-color: #4e4e4e;
 }
 
 .diaryEntry {

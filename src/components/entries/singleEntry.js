@@ -5,7 +5,7 @@ import Entry from "../../views/singleEntryView";
 import { connect } from "react-redux";
 import { getEntry } from "../../actions/entries/entriesActions";
 
-class SingleEntry extends Component {
+export class SingleEntry extends Component {
   state = {};
 
   componentWillMount() {

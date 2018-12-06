@@ -7,11 +7,11 @@ describe("login action", () => {
   beforeEach(() => {
     ({ mock, store } = mockSetup(mock, store));
   });
-  it("dispatches login action", () => {
+  it("dispatches signup action", () => {
     axiosMock(201, signup, SIGNUP_URL);
   });
-  it("dispatches login error action", () => {
-    mock.onPost(URL).reply(400, {});
+  it("dispatches signup action", () => {
+    mock.onPost(SIGNUP_URL).reply(200, {});
     signup({})(store.dispatch);
     expect(store.getActions()).toEqual([]);
   });

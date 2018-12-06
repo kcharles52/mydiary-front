@@ -7,9 +7,9 @@ import {
   CardTitle,
   CardSubtitle
 } from "reactstrap";
+import ReactQuill from "react-quill";
 
 const Entry = props => (
-  
   <div className="dEntry">
     <Card>
       <CardBody>
@@ -18,7 +18,11 @@ const Entry = props => (
       </CardBody>
       <CardBody>
         <CardText>
-          {props.diaryBody}
+          <ReactQuill
+            theme="bubble"
+            value={props.diaryBody}
+            placeholder="Enter your message here"
+          />
         </CardText>
         <CardLink href={`/edit/${props.entry_id}`}>Edit</CardLink>
       </CardBody>

@@ -1,7 +1,17 @@
 import { ENTRIES_URL } from "../../appUrls/API_URLS";
-import { getEntries, addEntry, EditEntry } from "../../actions/entries/entriesActions";
+import {
+  getEntries,
+  addEntry,
+  EditEntry
+} from "../../actions/entries/entriesActions";
 import entriesReducer from "../../reducers/entriesReducer";
-import { GET_ENTRIES, ENTRY_ERROR, ADD_ENTRY } from "../../actions/actionTypes";
+import {
+  GET_ENTRIES,
+  ENTRY_ERROR,
+  ADD_ENTRY,
+  GET_ENTRY,
+  EDIT_ENTRY
+} from "../../actions/actionTypes";
 import { mockSetup } from "../user/loginRedux.test";
 
 let store;
@@ -40,7 +50,6 @@ describe("edit entries action", () => {
   });
 });
 
-
 const action = action => {
   return {
     type: action,
@@ -49,7 +58,7 @@ const action = action => {
   };
 };
 describe("entries reducer", () => {
-  it("updates on succesful fetch", () => {
+  it("succesful fetch", () => {
     expect(entriesReducer({}, action(GET_ENTRIES))).toEqual({
       entries: undefined
     });
@@ -62,6 +71,17 @@ describe("entries reducer", () => {
   it("add new entry", () => {
     expect(entriesReducer({}, action(ADD_ENTRY))).toEqual({
       new: { data: "", status: "" }
+    });
+  });
+
+  it("Get entry", () => {
+    expect(entriesReducer({}, action(GET_ENTRY))).toEqual({
+      entry: { data: "", status: "" }
+    });
+  });
+  it("Edit entry", () => {
+    expect(entriesReducer({}, action(EDIT_ENTRY))).toEqual({
+      entry: { data: "", status: "" }
     });
   });
 });

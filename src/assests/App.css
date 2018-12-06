@@ -508,11 +508,10 @@ th {
   background-color: rgb(20, 20, 30, 0.9);
   padding: 5%;
   margin: auto;
-  color: #ddd;
 }
-.dEntry h5, h6{
-  font-size: 15px;
-}
+/* .dEntry h5 {
+  font-size: 30px;
+} */
 
 .entries{
   background-color: #4e4e4e;
@@ -531,6 +530,21 @@ th {
 .ql-editor {
   background-color: #ffffff;
   height: 300px;
+}
+.card {
+  color: #fff
+}
+.card-body h5 {
+  font-size: 20px;
+  margin:0px;
+  padding: 10px;
+  background-color: #aa5413
+}
+.card-text .ql-editor{
+  max-height: 100px;
+  background-color: #9f5218;
+  color:#ffcc33;
+  font-size: 18px;
 }
 
 .footer {

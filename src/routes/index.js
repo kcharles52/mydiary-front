@@ -4,6 +4,7 @@ import Home from "../components";
 import NewEntry from "../components/entries/newEntryForm";
 import Entries from "../components/entries/entriesPage";
 import Entry from "../components/entries/singleEntry";
+import EditEntry from "../components/entries/editEntry";
 
 export default function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ export default function AppRoutes() {
           <Route path="/" component={Home} exact strict />
           <Route path="/home" component={Entries} exact strict />
           <Route path="/entry/:entry_id" component={Entry} exact strict />
+          <Route path="/edit/:entry_id" component={EditEntry} exact strict />
           <Route path="/addEntry" component={NewEntry} exact strict />
         </Switch>
       </BrowserRouter>

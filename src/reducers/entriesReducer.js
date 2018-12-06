@@ -1,4 +1,4 @@
-import { GET_ENTRIES, ADD_ENTRY, GET_ENTRY} from "../actions/actionTypes";
+import { GET_ENTRIES, ADD_ENTRY, GET_ENTRY, EDIT_ENTRY} from "../actions/actionTypes";
 
 const initialState = {
     entries:[],
@@ -18,6 +18,11 @@ export default function entriesReducer(state = initialState, action) {
     new:action.payload,
   };
   case GET_ENTRY:
+  return {
+    ...state,
+    entry:action.payload,
+  };
+  case EDIT_ENTRY:
   return {
     ...state,
     entry:action.payload,

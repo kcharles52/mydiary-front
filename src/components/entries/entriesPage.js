@@ -5,7 +5,7 @@ import EntryCard from "../../views/entriesView";
 import { connect } from "react-redux";
 import { getEntries } from "../../actions/entries/entriesActions";
 
-class HomeLogedIn extends Component {
+export class HomeLogedIn extends Component {
   state = { header: "Diary Entries" };
   componentDidMount() {
     this.props.getEntries();

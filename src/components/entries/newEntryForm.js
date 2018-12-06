@@ -11,18 +11,11 @@ export class NewEntry extends Component {
     this.state = { entry: "" };
   }
 
-  componentWillMount() {
-    if (this.props.edit === true) {
-      
-    }
-  }
-
   createNewEntry = (event, values) => {
     const data = { ...values, diaryEntryBody: this.state.entry };
     this.props.addEntry(data);
   };
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
     if (nextProps.response.Message) {
       this.props.history.push(`/home`);
     }
@@ -39,6 +32,7 @@ export class NewEntry extends Component {
           <NewEntryForm
             createEntry={this.createNewEntry}
             entry={this.state.entry}
+            title={"Add Diary Entry"}
             handleChange={this.getInput}
             error={this.props.error}
           />

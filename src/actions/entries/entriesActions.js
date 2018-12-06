@@ -44,9 +44,11 @@ export const addEntry = (data) => dispatch => {
     });
 };
 
-export const EditEntry = (data) => dispatch => {
+export const EditEntry = (data,entry_id) => dispatch => {
+  let EntryUrl = ENTRIES_URL + `/${entry_id}`
+
     axios
-      .put(ENTRIES_URL,data,headers())
+      .put(EntryUrl,data,headers())
       .then(response => {
         dispatch({
           type: EDIT_ENTRY,

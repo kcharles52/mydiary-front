@@ -20,7 +20,6 @@ class HomeLogedIn extends Component {
     const Entries = response.map(item => {
       return <EntryCard {...item} key={item.entry_id} />;
     });
-    // console.log(Entries, response[1])
     return (
       <Fragment>
         <NavBar />

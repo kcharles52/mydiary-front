@@ -491,7 +491,7 @@ th {
   width: 90%;
   /* padding: 0 30px; */
 }
-.dEntry {
+.dEntryH {
   max-width: 33%;
   width: 30%;
   height: 300px;
@@ -502,6 +502,16 @@ th {
   float: left;
   color: #ddd;
 
+}
+.dEntry {
+  max-width: 70%;
+  background-color: rgb(20, 20, 30, 0.9);
+  padding: 5%;
+  margin: auto;
+  color: #ddd;
+}
+.dEntry h5, h6{
+  font-size: 15px;
 }
 
 .entries{

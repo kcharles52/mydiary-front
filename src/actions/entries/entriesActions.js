@@ -1,4 +1,4 @@
-import {GET_ENTRIES,EDIT_ENTRY, ADD_ENTRY } from "../actionTypes";
+import {GET_ENTRIES,EDIT_ENTRY, ADD_ENTRY, GET_ENTRY } from "../actionTypes";
 import axios from "axios";
 import { ENTRIES_URL } from "../../appUrls/API_URLS";
 
@@ -8,6 +8,20 @@ export const getEntries = () => dispatch => {
     .then(response => {
       dispatch({
         type: GET_ENTRIES,
+        payload: response.data,
+      });
+    })
+    .catch(error => {
+        return error.response
+    });
+};
+export const getEntry = (entry_id) => dispatch => {
+  let SingleEntryUrl = ENTRIES_URL + `/${entry_id}`
+  axios
+    .get(SingleEntryUrl,headers())
+    .then(response => {
+      dispatch({
+        type: GET_ENTRY,
         payload: response.data,
       });
     })

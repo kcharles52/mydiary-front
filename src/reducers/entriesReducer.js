@@ -3,7 +3,8 @@ import { GET_ENTRIES, ADD_ENTRY, GET_ENTRY, EDIT_ENTRY} from "../actions/actionT
 const initialState = {
     entries:[],
     entry:{},
-    new:{}
+    new:{},
+    Message:""
 }; 
 export default function entriesReducer(state = initialState, action) {
   switch (action.type) {
@@ -11,6 +12,7 @@ export default function entriesReducer(state = initialState, action) {
     return {
       ...state,
       entries:action.payload.entries,
+      Message:action.payload.Message
     };
   case ADD_ENTRY:
   return {

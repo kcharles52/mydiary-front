@@ -44,9 +44,6 @@ class NavigationBar extends Component {
                 <NavLink href="/addEntry">Create Journel</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/home">Diary Entries</NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink href="/" onClick={this.handleClick}>
                   Logout
                 </NavLink>

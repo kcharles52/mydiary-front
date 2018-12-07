@@ -25,6 +25,7 @@ const Entry = props => (
           />
         </CardText>
         <CardLink href={`/edit/${props.entry_id}`}>Edit</CardLink>
+        <CardLink href={()=>{props.delete(props.entry_id)}}>Delete</CardLink>
       </CardBody>
     </Card>
   </div>

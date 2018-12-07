@@ -1,6 +1,7 @@
 import { LOGIN } from "../actionTypes";
 import axios from "axios";
 import { LOGIN_URL } from "../../appUrls/API_URLS";
+import { toast } from "react-toastify";
 
 const loginAction = data => dispatch => {
   axios
@@ -13,6 +14,10 @@ const loginAction = data => dispatch => {
       });
     })
     .catch(error => {
+      toast.error(error.response.data.Message, {
+        autoClose: 5000,
+        hideProgressBar: true
+      });
       return error.response
     });
 };

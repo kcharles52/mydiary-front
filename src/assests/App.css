@@ -486,9 +486,11 @@ th {
   border: 2px solid;
   margin-right: 3px;
 }
-.entryCards{
+.entryCards {
   margin: auto;
   width: 90%;
+  overflow: auto;
+  height: 80vh;
   /* padding: 0 30px; */
 }
 .dEntryH {
@@ -501,7 +503,6 @@ th {
   position: relative;
   float: left;
   color: #ddd;
-
 }
 .dEntry {
   max-width: 70%;
@@ -509,12 +510,9 @@ th {
   padding: 5%;
   margin: auto;
 }
-/* .dEntry h5 {
-  font-size: 30px;
-} */
-
-.entries{
-  background-color: #4e4e4e;
+#entriesPage {
+  background-color: rgba(133, 55, 0, 0.8);
+  padding: 10px;
 }
 
 .diaryEntry {
@@ -532,21 +530,24 @@ th {
   height: 300px;
 }
 .card {
-  color: #fff
+  color: #fff;
 }
 .card-body h5 {
   font-size: 20px;
-  margin:0px;
+  margin: 0px;
   padding: 10px;
-  background-color: #aa5413
+  background-color: #aa5413;
 }
-.card-text .ql-editor{
+.card-text .ql-editor {
   max-height: 100px;
   background-color: #9f5218;
-  color:#ffcc33;
+  color: #ffcc33;
   font-size: 18px;
 }
-
+.card-link {
+  cursor: pointer;
+  padding-right: 10px;
+}
 .footer {
   color: #fff;
   background-color: #6c757d !important;

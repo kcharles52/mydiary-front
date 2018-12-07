@@ -3,7 +3,7 @@ import NavBar from "../common/navBar";
 import Footer from "../common/footer";
 import Entry from "../../views/singleEntryView";
 import { connect } from "react-redux";
-import { getEntry } from "../../actions/entries/entriesActions";
+import { getEntry, deleteEntry } from "../../actions/entries/entriesActions";
 
 export class SingleEntry extends Component {
   state = {};
@@ -12,13 +12,15 @@ export class SingleEntry extends Component {
     const { entry_id } = this.props.match.params;
     this.props.getEntry(entry_id);
   }
-
+  handlesDelete = (entry_id)=>{
+    this.props.deleteEntry(entry_id)
+   }
   render() {
     return (
       <Fragment>
         <NavBar />
         <div className="dEntry">
-          <Entry {...this.props.entry} />
+          <Entry {...this.props.entry}  delete={this.handlesDelete}/>
         </div>
         <Footer />
       </Fragment>
@@ -30,5 +32,5 @@ const mapStateToProps = state => ({
 });
 export default connect(
   mapStateToProps,
-  { getEntry }
+  { getEntry, deleteEntry }
 )(SingleEntry);

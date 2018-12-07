@@ -13,7 +13,8 @@ This is an online application that helps users to record their memories.
 * Click on the endpoint `create journel` to create a diary entry
 * You will automatically be directed to the list of entries
 * You can edit an entry by clicking on the edit link under the entry
-* You can view a single entry by clicking on the title on an entry
+* You can view a single entry by clicking on the title of an entry
+* To delete an entry click on the delete link
 
 
 ## Endpoints
@@ -25,7 +26,8 @@ GET| /home  | fetch |Fetch all entries for a user
 GET | /entry/<entry_Id> |fetch |Fetch the details of an entry for a user |
 POST | /addEntry | add |Add an entry|
 PUT | /edit/<entry_id> | Edit|Modify a diary entry|An entry can only be modified on the same day it was created.
-DELETE | /delete/<entry_id> | Delete| Delete an entry
+DELETE | /delete/<entry_id> | Delete|Delete an entry
+
 
 ## Author
 [Kato Charles](https://github.com/kcharles52)

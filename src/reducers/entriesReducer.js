@@ -1,10 +1,11 @@
-import { GET_ENTRIES, ADD_ENTRY, GET_ENTRY, EDIT_ENTRY} from "../actions/actionTypes";
+import { GET_ENTRIES, ADD_ENTRY, GET_ENTRY, EDIT_ENTRY, DELETE_ENTRY} from "../actions/actionTypes";
 
 const initialState = {
     entries:[],
     entry:{},
     new:{},
-    Message:""
+    Message:"",
+    delete: []
 }; 
 export default function entriesReducer(state = initialState, action) {
   switch (action.type) {
@@ -28,6 +29,11 @@ export default function entriesReducer(state = initialState, action) {
   return {
     ...state,
     entry:action.payload,
+  };
+  case DELETE_ENTRY :
+  return {
+    ...state,
+    delete: state.delete.concat(action.payload)
   };
   default:
     return state;

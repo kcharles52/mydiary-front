@@ -3,7 +3,7 @@ import NavBar from "../common/navBar";
 import Footer from "../common/footer";
 import EntryCard from "../../views/entriesView";
 import { connect } from "react-redux";
-import { getEntries } from "../../actions/entries/entriesActions";
+import { getEntries, deleteEntry } from "../../actions/entries/entriesActions";
 
 export class HomeLogedIn extends Component {
   state = { header: "Diary Entries" };
@@ -14,18 +14,29 @@ export class HomeLogedIn extends Component {
     if (nextprops.entries.length === 0) {
       this.setState({ header: "You have no entries " });
     }
+    if (nextprops.deleted.length > this.props.deleted.length) {
+      this.props.getEntries();
+    }
   }
- 
-  render() {  
+  handlesDelete = entry_id => {
+    this.props.deleteEntry(entry_id);
+  };
+  render() {
     const response = this.props.entries;
     const Entries = response.map(item => {
-      return <EntryCard {...item} key={item.entry_id} />;
+      return (
+        <EntryCard
+          {...item}
+          key={item.entry_id}
+          delete={this.props.deleteEntry}
+        />
+      );
     });
     return (
       <Fragment>
         <NavBar />
         <div className="entries">
-          <h1>{this.state.header}</h1>
+          <h1 id="entriesPage">{this.state.header}</h1>
           <div className="entryCards">{Entries}</div>
         </div>
 
@@ -35,9 +46,10 @@ export class HomeLogedIn extends Component {
   }
 }
 const mapStateToProps = state => ({
-  entries: state.entriesReducer.entries
+  entries: state.entriesReducer.entries,
+  deleted: state.entriesReducer.delete
 });
 export default connect(
   mapStateToProps,
-  { getEntries }
+  { getEntries, deleteEntry }
 )(HomeLogedIn);

@@ -30,6 +30,7 @@ export const Entries = props => (
             />
         </CardText>
         <CardLink href={`/edit/${props.entry_id}`}>Edit</CardLink>
+        <CardLink onClick={()=>{props.delete(props.entry_id)}}>Delete</CardLink>
       </CardBody>
     </Card>
   </div>

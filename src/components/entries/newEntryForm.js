@@ -8,11 +8,17 @@ import { addEntry } from "../../actions/entries/entriesActions";
 export class NewEntry extends Component {
   constructor(props) {
     super(props);
-    this.state = { entry: "" };
+    this.state = {
+      entry: {
+        date: "",
+        diaryBody: "",
+        diaryTitle: ""
+      }
+    };
   }
 
   createNewEntry = (event, values) => {
-    const data = { ...values, diaryEntryBody: this.state.entry };
+    const data = { ...values, diaryEntryBody: this.state.entry.diaryBody };
     this.props.addEntry(data);
   };
   componentWillReceiveProps(nextProps) {
@@ -21,7 +27,14 @@ export class NewEntry extends Component {
     }
   }
   getInput = value => {
-    this.setState({ entry: value });
+    this.setState(prevState => {
+      return {
+        entry: {
+          ...prevState.entry,
+          diaryBody: value
+        }
+      };
+    });
   };
 
   render() {
@@ -49,5 +62,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addEntry}
+  { addEntry }
 )(NewEntry);

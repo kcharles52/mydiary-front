@@ -15,7 +15,8 @@ export class HomeLogedIn extends Component {
       this.setState({ header: "You have no entries " });
     }
   }
-  render() {
+ 
+  render() {  
     const response = this.props.entries;
     const Entries = response.map(item => {
       return <EntryCard {...item} key={item.entry_id} />;

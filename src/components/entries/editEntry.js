@@ -4,6 +4,7 @@ import Footer from "../common/footer";
 import NewEntryForm from "../../views/newEntryView";
 import { connect } from "react-redux";
 import { EditEntry, getEntry } from "../../actions/entries/entriesActions";
+import {formatedDate} from "../../utils/utils"
 
 export class EditMyEntry extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ export class EditMyEntry extends Component {
     }
     this.setState({
       entry: {
-        date: nextProps.response.entry.date,
+        date: formatedDate(nextProps.response.entry.date),
         diaryBody: nextProps.response.entry.diaryBody,
         diaryTitle: nextProps.response.entry.title
       }

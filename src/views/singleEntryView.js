@@ -8,13 +8,14 @@ import {
   CardSubtitle
 } from "reactstrap";
 import ReactQuill from "react-quill";
+import { formatedDate } from "../utils/utils";
 
 const Entry = props => (
   <div className="dEntry">
     <Card>
       <CardBody>
         <CardTitle>{props.title}</CardTitle>
-        <CardSubtitle>{props.date}</CardSubtitle>
+        <CardSubtitle>{formatedDate(props.date)}</CardSubtitle>
       </CardBody>
       <CardBody>
         <CardText>

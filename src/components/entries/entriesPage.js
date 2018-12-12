@@ -36,7 +36,10 @@ export class HomeLogedIn extends Component {
       <Fragment>
         <NavBar />
         <div className="entries">
-          <h1 id="entriesPage">{this.state.header}</h1>
+          <div id="entriesPage" className="flex-container">
+            <h1>{this.state.header} </h1>
+            <h3>Date: {(new Date()).toLocaleString()}</h3>
+          </div>
           <div className="entryCards">{Entries}</div>
         </div>
 

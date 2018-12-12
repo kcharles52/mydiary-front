@@ -513,6 +513,16 @@ th {
 #entriesPage {
   background-color: rgba(133, 55, 0, 0.8);
   padding: 10px;
+  display: flex;
+}
+.flex-container {
+  justify-content: center;
+  align-items: center;
+}
+.flex-container h1,
+h3 {
+  margin: 1px;
+  padding: 0 10%;
 }
 
 .diaryEntry {

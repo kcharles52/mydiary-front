@@ -25,7 +25,7 @@ GET| /home  | fetch |Fetch all entries for a user
 GET | /entry/<entry_Id> |fetch |Fetch the details of an entry for a user |
 POST | /addEntry | add |Add an entry|
 PUT | /edit/<entry_id> | Edit|Modify a diary entry|An entry can only be modified on the same day it was created.
-
+DELETE | /delete/<entry_id> | Delete| Delete an entry
 
 ## Author
 [Kato Charles](https://github.com/kcharles52)

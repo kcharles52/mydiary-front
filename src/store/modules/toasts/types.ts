@@ -1,2 +1,0 @@
-export const DISPLAY_TOAST_MESSAGE = 'mydiary-front/DISPLAY_TOAST_MESSAGE';
-export type DISPLAY_TOAST_MESSAGE = typeof DISPLAY_TOAST_MESSAGE;

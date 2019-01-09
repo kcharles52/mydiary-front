@@ -1,34 +1,24 @@
-// react libraries
-import * as React from "react";
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "../components";
+import NewEntry from "../components/entries/newEntryForm";
+import Entries from "../components/entries/entriesPage";
+import Entry from "../components/entries/singleEntry";
+import EditEntry from "../components/entries/editEntry";
+import ProtectedRoute from "./protectedRoutes";
 
-//third party packages
-import { Route, Switch } from "react-router-dom";
-
-//components
-import Home from "../pages/LandingPage/";
-import Entries from "../pages/Entries";
-import CreatEditEntry from "../pages/CreateEditEntry";
-import SingleEntry from "../pages/SingleEntry";
-
-// import ProtectedRoute from "./protectedRoutes";
-
-const AppRoutes = () => {
+export default function AppRoutes() {
   return (
     <div>
-      <Switch>
-        <Route path="/" component={Home} exact strict />
-        <Route path="/home" component={Entries} exact strict />
-        <Route
-          path="/editEntry/:entry_id"
-          component={CreatEditEntry}
-          exact
-          strict
-        />
-        <Route path="/addEntry" component={CreatEditEntry} exact strict />
-        <Route path="/Entry/:entry_id" component={SingleEntry} exact strict />
-      </Switch>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Home} exact strict />
+          <ProtectedRoute path="/home" component={Entries} exact strict />
+          <ProtectedRoute path="/entry/:entry_id" component={Entry} exact strict />
+          <ProtectedRoute path="/edit/:entry_id" component={EditEntry} exact strict />
+          <ProtectedRoute path="/addEntry" component={NewEntry} exact strict />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
-};
-
-export default AppRoutes;
+}
